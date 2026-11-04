@@ -12,20 +12,34 @@ requests are not taken.
 ## What is here
 
 ```
-signed/                          the last publication: index.json, index.json.sig, index.json.wsig, revoked.json, revoked.json.wsig
+signed/                          the last publication: index.json, index.json.sig, index.json.wsig, revoked.json, revoked.json.wsig,
+                                 revoked.rkdb (the revocation database, ADR 0046 "RKDB"), revoked.checkpoint.json (its checkpoint:
+                                 {format, serial, sha512_256}), intermediates.json (a JSON array of the certificates in certs/intermediates/),
+                                 emergency.rkdr (a root-signed emergency section, only while one is in force),
+                                 release.json.wsig (the Index's signature over the WolOS release manifest, when one was signed)
+revoked.checkpoint.json          the same checkpoint at the root of this repository: WolOS reads it here and on the CDN and compares them
 signed/statements/<id>/<version>.wsig   the signed release statement of each listed version (once the pipeline signs statements)
                                  git history of signed/ = every index ever signed, append-only
 verdicts/<id>/<version>.json     one check verdict per release (verdict, findings, sha256, size, run, workflow sha)
 certs/<serial>.wolcert           every author certificate the Authors CA issued
 certs/<serial>.json              its record: {serial, tier, kind, github_id, login, request_id, issued_at, approved_by+approved_at | cla_accepted_at}
-certs/roots/                     the public root certificates (the ones the WolOS image pins)
-certs/intermediates/             the intermediate certificates (Index, Authors CA)
+certs/roots/                     the two public root certificates (the ones the WolOS image pins), named root-<a|b>-<id>.wolcert
+certs/intermediates/             the intermediate certificates, each signed by both roots: authors-ca, packages-ca, index, witness-a, witness-b
 revocations.json                 the entries of the revocation list, {serial, at, reason}; signed/revoked.json is made from it
 schema/                          the public contract: index.schema.json (I3), revoked.schema.json, request.schema.json
 ```
 
-Clients read the CDN, not this repository: `https://cdn.wolos.org/plugins/{index.json,index.json.sig,index.json.wsig,revoked.json,revoked.json.wsig}`.
-The CDN and `signed/` carry the same bytes; this repository adds the history.
+Clients read the CDN, not this repository: `https://cdn.wolos.org/plugins/{index.json,index.json.sig,index.json.wsig,revoked.json,revoked.json.wsig,revoked.rkdb,revoked.checkpoint.json,intermediates.json,emergency.rkdr}`
+and `https://cdn.wolos.org/latest/release.json.wsig`. The CDN and `signed/` carry the same bytes; this repository adds the history.
+
+## The roots
+
+Generated 2026-11-04 (ADR 0046; a certificate id is SHA-512 over its public keys, 128 hex characters). Every intermediate carries both roots' signatures.
+
+| root | id | subject |
+|---|---|---|
+| A (`certs/roots/root-a-….wolcert`) | `ae2a56edc939c85e4792e2aadc2222873c20ad976564034d461eba3c6c9325664f80d70894dac439412ddc7f13f591e622d32f4cead38954b64369efd87d05ba` | wolos-root-a: Júlia Klee - Kleedolinux - WolOS.org - 10/04/2009 - 9 de Julho 1932 - São Paulo |
+| B (`certs/roots/root-b-….wolcert`) | `d10a4c5f9318675b1b8aba9e9eca99b18077233c03cd61c3cc7293c1508099915bb77a707c60b843994304be78621ce76eea9e6cc3cd0404790660bce4c8cea9` | wolos-root-b: WolOS Project - hello@wolos.org |
 
 ## How to verify
 
