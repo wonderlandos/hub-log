@@ -1,0 +1,40 @@
+{
+  "listing_id": "wonderlandos.quiethours",
+  "version": "1.0",
+  "verdict": "pass",
+  "sha256": "18eb996ebc34a5e970fc70fcfc84f868a51211f066b9a7da38ea9834e8171e63",
+  "size": 96760,
+  "findings": [
+    {
+      "rule": "trust/unsigned",
+      "sentence": "Nobody vouches for this file. WolOS can't tell who made it or whether someone changed it on the way."
+    }
+  ],
+  "trust": "community",
+  "facts": {
+    "name": "Quiet Hours",
+    "summary": "Do Not Disturb on a schedule: on every evening at the hour you choose, off in the morning.",
+    "description": "Quiet Hours turns on Do Not Disturb at the hour you choose and turns it off again when the quiet time ends: from 22:00 to 07:00 unless you change it. Notifications wait in Notification Center instead of popping up, and urgent ones still show.\n\nClick the moon in the menu bar to change the hours or pause the schedule. If you turn Do Not Disturb off yourself during quiet time, Quiet Hours leaves it off until the next quiet time; it only ever turns off what it turned on.\n\nThe first time it turns Do Not Disturb on, WolOS asks whether Quiet Hours may do that. Choose Always Allow so it works when you are not at the computer; you can take that back in Settings, Assistants & Automation.",
+    "icon": {
+      "path": "icon.png",
+      "mime": "image/png",
+      "w": 512,
+      "h": 512,
+      "size": 76978,
+      "sha256": "6f1c83a139176968b3e1c8562424a2936e93afb08b2723bdcbd4bbb3ef8767e4"
+    },
+    "screenshots": [
+      {
+        "path": "preview.webp",
+        "mime": "image/webp",
+        "w": 1280,
+        "h": 800,
+        "size": 10290,
+        "sha256": "18b1be0a9da7320bfeb3d4499b1475a87c302d8f5c1359b07de8ddc2e287fa7b"
+      }
+    ]
+  },
+  "checked_at": 1793914497,
+  "run": "42113832731.1",
+  "workflow_sha": "cff32e80625390bcdd11ead2fe5d84f568e11c49"
+}

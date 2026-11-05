@@ -1,0 +1,40 @@
+{
+  "listing_id": "wonderlandos.loadgraph",
+  "version": "1.0",
+  "verdict": "pass",
+  "sha256": "ad51bc31878ad5f5b1223549d5651c8d8db53ec2dc88c18d8e25460d1e104357",
+  "size": 80726,
+  "findings": [
+    {
+      "rule": "trust/unsigned",
+      "sentence": "Nobody vouches for this file. WolOS can't tell who made it or whether someone changed it on the way."
+    }
+  ],
+  "trust": "community",
+  "facts": {
+    "name": "Load Graph",
+    "summary": "CPU and memory over the last minutes as small graphs, on a desktop card and in the menu bar.",
+    "description": "Load Graph answers the question a single number cannot: has the computer been busy for a while, or was that just a spike?\n\nThe desktop card draws CPU and memory use over the last six minutes, with the highest point and the load average. The menu bar item draws the last half minute of CPU next to the figure now. Click it to open Top.\n\nThe figures come from the same system report the Stats plugin uses. Nothing is saved: the graphs start again when you log in.",
+    "icon": {
+      "path": "icon.png",
+      "mime": "image/png",
+      "w": 512,
+      "h": 512,
+      "size": 57919,
+      "sha256": "a334e8d7e1d9ce5184a1f23d8dd85f9d6c247f1184675f930275ccebd1f55d07"
+    },
+    "screenshots": [
+      {
+        "path": "preview.webp",
+        "mime": "image/webp",
+        "w": 1280,
+        "h": 800,
+        "size": 13544,
+        "sha256": "fcdb29463d5c1b4be339bc31a490b899fc929cccc2ccdbad20050d8c383dd693"
+      }
+    ]
+  },
+  "checked_at": 1793914497,
+  "run": "42113832731.1",
+  "workflow_sha": "cff32e80625390bcdd11ead2fe5d84f568e11c49"
+}

@@ -1,0 +1,40 @@
+{
+  "listing_id": "wonderlandos.webshortcuts",
+  "version": "1.0",
+  "verdict": "pass",
+  "sha256": "fe6eb21efaa54abaad8ef9a7916b572993f789735db9a936477f8592e57f6de5",
+  "size": 116642,
+  "findings": [
+    {
+      "rule": "trust/unsigned",
+      "sentence": "Nobody vouches for this file. WolOS can't tell who made it or whether someone changed it on the way."
+    }
+  ],
+  "trust": "community",
+  "facts": {
+    "name": "Web Shortcuts",
+    "summary": "Search Wikipedia, the Arch Wiki, GitHub and nine more sites from the menu bar, in two clicks.",
+    "description": "Web Shortcuts searches a website without opening the browser first. Click the magnifier in the menu bar, type what you are looking for, and press Search next to the site: Wikipedia, Wiktionary, the Arch Wiki, Arch packages, GitHub, MDN Web Docs, Rust crates, Stack Overflow, YouTube, OpenStreetMap, DuckDuckGo or the manual pages. The site's own search opens in your browser.\n\nWith nothing typed, the button opens the site itself. The words stay in the box until you change them, so you can try the same search on several sites.\n\nThe plugin only builds the address; your browser opens it. Nothing is read from the web, and what you type is not saved.",
+    "icon": {
+      "path": "icon.png",
+      "mime": "image/png",
+      "w": 512,
+      "h": 512,
+      "size": 81148,
+      "sha256": "b8f3e37d002339a1a17c574237121a02fd559e42ab25e1b0e32358fc38f395f2"
+    },
+    "screenshots": [
+      {
+        "path": "preview.webp",
+        "mime": "image/webp",
+        "w": 1280,
+        "h": 800,
+        "size": 27162,
+        "sha256": "cbaa48ff4ee471013ec9d24c113195e523a9f851067b3780d76cf6059e6fc6f7"
+      }
+    ]
+  },
+  "checked_at": 1793914497,
+  "run": "42113832731.1",
+  "workflow_sha": "cff32e80625390bcdd11ead2fe5d84f568e11c49"
+}

@@ -1,0 +1,40 @@
+{
+  "listing_id": "wonderlandos.battery",
+  "version": "1.0",
+  "verdict": "pass",
+  "sha256": "01d711c30e9617fa918a9e93236a87d1e07d9498b676a657fead9bf4a431e902",
+  "size": 87605,
+  "findings": [
+    {
+      "rule": "trust/unsigned",
+      "sentence": "Nobody vouches for this file. WolOS can't tell who made it or whether someone changed it on the way."
+    }
+  ],
+  "trust": "community",
+  "facts": {
+    "name": "Battery Care",
+    "summary": "Battery health and charge cycles, and a reminder to unplug at the charge you choose.",
+    "description": "Battery Care tells you how worn your laptop's battery is and helps it last longer.\n\nThe desktop card shows the battery's health: how much it holds now compared with when it was new, in watt-hours, and how many charge cycles it has been through.\n\nThe menu bar item reminds you to unplug the charger once the battery reaches the charge you choose (80% unless you change it), with one notification per charge. Click it to change the charge, turn the reminder off, or see the details.\n\nOn a computer without a battery it says so and does nothing else.",
+    "icon": {
+      "path": "icon.png",
+      "mime": "image/png",
+      "w": 512,
+      "h": 512,
+      "size": 62763,
+      "sha256": "adccb9b96bd16c0b08ab9610eff971b90b4902fb2db8365153660d4c199d373b"
+    },
+    "screenshots": [
+      {
+        "path": "preview.webp",
+        "mime": "image/webp",
+        "w": 1280,
+        "h": 800,
+        "size": 15724,
+        "sha256": "a0b375c84504a993d358cef1ca1f7a946e7678d62e1d900cf4990825fbd4954d"
+      }
+    ]
+  },
+  "checked_at": 1793914497,
+  "run": "42113832731.1",
+  "workflow_sha": "cff32e80625390bcdd11ead2fe5d84f568e11c49"
+}

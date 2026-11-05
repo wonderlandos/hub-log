@@ -1,0 +1,40 @@
+{
+  "listing_id": "wonderlandos.netspeed",
+  "version": "1.0",
+  "verdict": "pass",
+  "sha256": "edde561fdcb855ad0ec8caed6a73bcd2844e966adc286d7fb66989930a555a10",
+  "size": 88063,
+  "findings": [
+    {
+      "rule": "trust/unsigned",
+      "sentence": "Nobody vouches for this file. WolOS can't tell who made it or whether someone changed it on the way."
+    }
+  ],
+  "trust": "community",
+  "facts": {
+    "name": "Net Speed",
+    "summary": "Download and upload speed in the menu bar, and a card with the last two minutes.",
+    "description": "Net Speed shows how fast this computer is downloading and uploading right now.\n\nThe menu bar item shows both speeds and refreshes every two seconds; click it for each network connection and how much it has moved since the computer started. The desktop card draws the last two minutes as a small graph.\n\nIt counts every real connection (Wi-Fi, Ethernet, VPN) and leaves out the computer's own loopback and the virtual bridges containers and virtual machines make. It reads the counters the system already keeps; it sends nothing anywhere.",
+    "icon": {
+      "path": "icon.png",
+      "mime": "image/png",
+      "w": 512,
+      "h": 512,
+      "size": 63458,
+      "sha256": "19c3a1bec43909eb82e53d292bb1fd84fbe839e491c3666ff1575ea70648a648"
+    },
+    "screenshots": [
+      {
+        "path": "preview.webp",
+        "mime": "image/webp",
+        "w": 1280,
+        "h": 800,
+        "size": 15004,
+        "sha256": "d4a1ab3b204b5310fbfca825b4fecbd0c0513f832bd3dfb04096bd0375ec16b3"
+      }
+    ]
+  },
+  "checked_at": 1793914497,
+  "run": "42113832731.1",
+  "workflow_sha": "cff32e80625390bcdd11ead2fe5d84f568e11c49"
+}
