@@ -21,15 +21,19 @@ revoked.checkpoint.json          the same checkpoint at the root of this reposit
 signed/statements/<id>/<version>.wsig   the signed release statement of each listed version (once the pipeline signs statements)
                                  git history of signed/ = every index ever signed, append-only
 verdicts/<id>/<version>.json     one check verdict per release (verdict, findings, sha256, size, run, workflow sha)
+pictures/<sha256>.<png|webp>     the icons and screenshots the listings name (index.json entries' icon and screenshots), each
+                                 checked by hash, size and header; the same bytes are on the CDN at plugins/pictures/<file>
 certs/<serial>.wolcert           every author certificate the Authors CA issued
 certs/<serial>.json              its record: {serial, tier, kind, github_id, login, request_id, issued_at, approved_by+approved_at | cla_accepted_at}
 certs/roots/                     the two public root certificates (the ones the WolOS image pins), named root-<a|b>-<id>.wolcert
 certs/intermediates/             the intermediate certificates, each signed by both roots: authors-ca, packages-ca, index, witness-a, witness-b
 revocations.json                 the entries of the revocation list, {serial, at, reason}; signed/revoked.json is made from it
-schema/                          the public contract: index.schema.json (I3), revoked.schema.json, request.schema.json
+schema/                          the public contract: index.schema.json (I3), revoked.schema.json, request.schema.json;
+                                 byte for byte the pipeline's schema/ (its sign job stops on any difference, its ci job too)
 ```
 
-Clients read the CDN, not this repository: `https://cdn.wolos.org/plugins/{index.json,index.json.sig,index.json.wsig,revoked.json,revoked.json.wsig,revoked.rkdb,revoked.checkpoint.json,intermediates.json,emergency.rkdr}`
+Clients read the CDN, not this repository: `https://cdn.wolos.org/plugins/{index.json,index.json.sig,index.json.wsig,revoked.json,revoked.json.wsig,revoked.rkdb,revoked.checkpoint.json,intermediates.json,emergency.rkdr}`,
+the listing pictures at `https://cdn.wolos.org/plugins/pictures/<sha256>.<png|webp>`
 and `https://cdn.wolos.org/latest/release.json.wsig`. The CDN and `signed/` carry the same bytes; this repository adds the history.
 
 ## The roots
