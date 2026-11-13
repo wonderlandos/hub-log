@@ -1,9 +1,9 @@
 {
   "format": 1,
-  "serial": 8,
-  "issued": 1794509881,
-  "expires": 1795114681,
-  "generated": 1794509881,
+  "serial": 9,
+  "issued": 1794587182,
+  "expires": 1795191982,
+  "generated": 1794587181,
   "apps": [
     {
       "id": "wonderlandos.rsh",
@@ -307,7 +307,7 @@
   ],
   "revoked": {
     "url": "https://cdn.wolos.org/plugins/revoked.json",
-    "sha256": "50660f0068eb847cf90410a9a08f9a9b4e69085b373d999814272b776cd5f75e",
-    "serial": 8
+    "sha256": "6e5ddc372175c97d3a1458ef592ae09647c3a2244134c9b93acd63317f74a325",
+    "serial": 9
   }
 }
